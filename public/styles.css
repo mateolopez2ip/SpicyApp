@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light dark;
+  --accent: #c2185b;
+  --accent-dark: #8e0e42;
+  --bg: #fff5f8;
+  --text: #2a2a2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app__title {
+  text-align: center;
+  color: var(--accent-dark);
+}
+
+.screen {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.screen[hidden] {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.form input,
+.form select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+.field-error {
+  color: #b00020;
+  font-size: 0.9rem;
+}
+
+.error-banner {
+  background: #ffe0e0;
+  color: #b00020;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.session-code {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--accent-dark);
+}
+
+.round-progress {
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.turn-indicator {
+  font-size: 1.1rem;
+}
+
+.prompt-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1015;
+    --text: #f0e6ea;
+  }
+
+  .screen {
+    background: #2a1c22;
+    box-shadow: none;
+  }
+
+  .form input,
+  .form select {
+    background: #1a1015;
+    color: var(--text);
+    border-color: #4a3540;
+  }
+}

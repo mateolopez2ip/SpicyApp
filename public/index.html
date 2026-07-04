@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verdad o Reto</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="app__title">Verdad o Reto</h1>
+
+      <p id="error-banner" class="error-banner" hidden></p>
+
+      <section id="screen-setup" class="screen">
+        <h2>Empezar a jugar</h2>
+        <form id="setup-form" class="form">
+          <label>
+            Tu nombre
+            <input type="text" id="setup-name" required />
+          </label>
+          <label>
+            Tu sexo
+            <select id="setup-gender" required>
+              <option value="male">Hombre</option>
+              <option value="female">Mujer</option>
+            </select>
+          </label>
+          <label>
+            Número de sesión (déjalo en blanco para crear una nueva partida)
+            <input type="text" id="setup-session-id" />
+          </label>
+          <p class="field-error" id="setup-error" hidden></p>
+          <div class="button-row">
+            <button type="submit" data-action="create">Crear partida</button>
+            <button type="submit" data-action="join">Unirse</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="screen-waiting_for_player" class="screen" hidden>
+        <h2>Esperando al otro jugador...</h2>
+        <p>Comparte este número de sesión con tu pareja:</p>
+        <p class="session-code" id="waiting-session-id"></p>
+      </section>
+
+      <section id="screen-rounds_form" class="screen" hidden>
+        <h2>¿Cuántas rondas jugamos?</h2>
+        <form id="rounds-form" class="form">
+          <label>
+            Número de rondas (1-20)
+            <input type="number" id="rounds-count" min="1" max="20" value="5" required />
+          </label>
+          <p class="field-error" id="rounds-error" hidden></p>
+          <button type="submit">Empezar a jugar</button>
+        </form>
+      </section>
+
+      <section id="screen-turn" class="screen" hidden>
+        <p class="round-progress" id="round-progress"></p>
+        <p class="rounds-completed" id="rounds-completed"></p>
+        <p class="turn-indicator" id="turn-indicator"></p>
+
+        <div id="choice-buttons" class="button-row" hidden>
+          <button type="button" data-choice="truth">Verdad</button>
+          <button type="button" data-choice="dare">Reto</button>
+        </div>
+
+        <p class="prompt-text" id="prompt-text" hidden></p>
+
+        <div id="ok-button-container" hidden>
+          <button type="button" id="ok-button">OK, turno completado</button>
+        </div>
+      </section>
+
+      <section id="screen-end_of_game" class="screen" hidden>
+        <h2>¡Partida terminada!</h2>
+        <p class="rounds-completed" id="final-rounds-completed"></p>
+        <button type="button" id="play-again-button">Jugar otra vez</button>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

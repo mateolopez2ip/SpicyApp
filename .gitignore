@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.env*
+
+# Runtime session data (file-backed store; not source)
+data/sessions/*.json
+
+# Local Claude Code tool-permission settings (machine-specific)
+.claude/settings.local.json*
