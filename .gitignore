@@ -10,3 +10,6 @@ data/sessions/*.json
 
 # Local Claude Code tool-permission settings (machine-specific)
 .claude/settings.local.json*
+
+# Local az CLI defaults (machine-specific, no secrets)
+.azure/
